@@ -1,0 +1,455 @@
+@import url("https://use.typekit.net/rsi3heu.css");
+@font-face {
+  font-family: "poppins";
+  src: url(../fonts/poppins.ttf);
+}
+
+@font-face {
+  font-family: "brush";
+  src: url(../fonts/brush.ttf);
+}
+
+::-moz-selection {
+  background-color: black !important;
+  color: #F52B50;
+}
+
+::selection {
+  background-color: black !important;
+  color: #F52B50;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-color: #F52B50;
+  margin: 0;
+  font-family: utopia-std-headline;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none !important;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+  color: white;
+}
+
+a:hover {
+  color: #121212 !important;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+
+h2 {
+  font-size: 80px;
+}
+
+h3 {
+  font-size: 64px;
+}
+
+p {
+  font-size: 18px;
+  font-family: utopia-std-subhead;
+  line-height: 1.8em;
+}
+
+button {
+  padding: 15px 30px;
+  background-color: #F52B50;
+  color: white;
+  border: none;
+  font-size: 22px;
+  font-family: utopia-std-subhead;
+  font-style: italic;
+  margin-top: 15px;
+}
+
+.button-black {
+  background-color: black;
+}
+
+@media only screen and (min-width: 800px) {
+  .hide-on-desktop {
+    display: none;
+  }
+  .nav-m-container {
+    display: none;
+  }
+  .nav {
+    position: absolute;
+    width: 100%;
+    z-index: 100000 !important;
+  }
+  .nav-links-desktop {
+    position: fixed !important;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0 50px;
+    top: 5%;
+    left: 0;
+  }
+  .nav-links-desktop div {
+    color: white;
+    font-size: 1.5em;
+    width: 50%;
+  }
+  .nav-links-desktop div:first-child {
+    text-align: left;
+  }
+  .nav-links-desktop div:last-child {
+    text-align: right;
+  }
+  .nav-links-desktop div a {
+    color: white;
+  }
+  .logo-svg {
+    position: fixed;
+    width: 15%;
+    top: 45%;
+    left: 42.5%;
+  }
+  svg g path {
+    -webkit-transition: 0.3s ease-out;
+    transition: 0.3s ease-out;
+  }
+  .logo-svg:hover svg g path {
+    fill: #121212 !important;
+    -webkit-transition: 0.3s ease-out;
+    transition: 0.3s ease-out;
+  }
+  .logo-svg:hover {
+    cursor: pointer;
+  }
+  footer {
+    width: 100%;
+    margin: 0;
+    padding: 100px 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    background-color: white;
+    color: #F52B50;
+    position: fixed;
+  }
+  .footer-text,
+  .footer-links {
+    color: #F52B50 !important;
+    font-family: poppins;
+    font-weight: 100;
+    width: 40%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    border-top: 2px solid #F52B50;
+  }
+  .footer-text:last-child,
+  .footer-links:last-child {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .footer-links a {
+    padding: 0 5px;
+    margin: 0 5px;
+    color: #F52B50;
+  }
+  #connect {
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    font-family: poppins;
+    font-size: 16px;
+    line-height: 1.5em;
+    background-color: white;
+  }
+  #connect:hover {
+    color: #121212;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  .footer-connect {
+    padding: 0 10px;
+    width: 100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    height: auto;
+    -webkit-transition: 0.5s ease-in;
+    transition: 0.5s ease-in;
+  }
+  .open {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-transition: 0.3s cubic-bezier(0.1, 0.2, 0.4, 0.8);
+    transition: 0.3s cubic-bezier(0.1, 0.2, 0.4, 0.8);
+  }
+  #connect-box {
+    text-align: left;
+    opacity: 0;
+    bottom: -70px;
+    left: 10px;
+    margin: 0;
+    -webkit-transition: 0.3s cubic-bezier(0.1, 0.2, 0.4, 0.8);
+    transition: 0.3s cubic-bezier(0.1, 0.2, 0.4, 0.8);
+    -webkit-transform: translateY(-40%);
+            transform: translateY(-40%);
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    cursor: default;
+  }
+  #connect-box a {
+    margin: 0;
+    padding: 0;
+  }
+  .connect-box-open {
+    pointer-events: all !important;
+    cursor: pointer !important;
+    opacity: 1 !important;
+    -webkit-transition: 0.5s cubic-bezier(0.1, 0.2, 0.4, 0.8);
+    transition: 0.5s cubic-bezier(0.1, 0.2, 0.4, 0.8);
+    -webkit-transform: translateY(0%) !important;
+            transform: translateY(0%) !important;
+  }
+  .progress-bar {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 3px;
+    background-color: #F52B50;
+  }
+  .progress-bar-bar {
+    position: relative;
+    width: 50%;
+    background-color: white;
+    height: 3px;
+  }
+  /* HOME */
+  .landing {
+    height: 100vh;
+    width: 100%;
+    z-index: 100;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  section {
+    position: fixed !important;
+  }
+  .section-home-2, .section-home-3, .section-home-4, .section-home-5, .section-home-6 {
+    position: fixed;
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+    font-size: 5vh;
+    color: white;
+    z-index: 2;
+  }
+  .section-home-2 {
+    background-image: url(/img/ice.jpg);
+    background-position: center;
+    background-size: cover;
+    z-index: 10;
+    height: 100%;
+  }
+  .section-home-2 div {
+    height: 100%;
+    width: 100vw;
+    padding: 0 200px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+  }
+  .section-home-3 {
+    background-image: none;
+    background-color: #060606;
+    font-size: inherit;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    padding: 0 200px;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+  }
+  .section-home-3 .three-text {
+    max-width: 900px;
+    text-align: left;
+  }
+  .section-home-3 .three-text h3 {
+    margin-bottom: 20px;
+  }
+  .section-home-3 .three-text p {
+    width: 80%;
+  }
+  .section-home-3 .three-svg {
+    position: absolute;
+    right: 20px;
+  }
+  .section-home-4 {
+    background-image: url("/img/POINT.jpg");
+    background-size: 160%;
+    background-position: right 0px bottom 80%;
+    font-size: inherit;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+    padding-left: 200px;
+    width: 100%;
+    z-index: 8;
+  }
+  .section-home-4 .four-text {
+    padding-right: 200px;
+    z-index: 2;
+    max-width: 900px;
+    text-align: right;
+  }
+  .section-home-4 .four-text h3 {
+    margin-bottom: 20px;
+  }
+  .section-home-4 .four-text p {
+    width: 80%;
+    margin-left: 20%;
+  }
+  .section-home-4 .four-overlay {
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  .section-home-5 {
+    background-image: url("/img/earth.jpg");
+    background-size: 160%;
+    background-position: left 50% top 30%;
+    font-size: inherit;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    padding-right: 200px;
+    width: 100%;
+    z-index: 7;
+  }
+  .section-home-5 .five-text {
+    color: black;
+    padding-left: 200px;
+    z-index: 2;
+    max-width: 900px;
+    text-align: left;
+  }
+  .section-home-5 .five-text h3 {
+    margin-bottom: 20px;
+  }
+  .section-home-5 .five-overlay {
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background: rgba(0, 0, 0, 0);
+  }
+  .section-home-6 {
+    background-image: none;
+    background-color: #F52B50;
+    font-size: inherit;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 60vh;
+    padding: 0 200px;
+    width: 100%;
+    z-index: 6;
+  }
+  .section-home-6 .six-text {
+    color: white;
+    z-index: 2;
+    max-width: 750px;
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .section-home-6 .six-text h3 {
+    margin-bottom: 20px;
+  }
+  .section-home-6 .six-text p {
+    width: 80%;
+    margin-left: 10%;
+  }
+}
