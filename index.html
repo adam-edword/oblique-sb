@@ -10,19 +10,34 @@
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="icon" href="img/favicon.jpg">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
 </head>
 
 <body>
-    <div class=nav-m-btn>
+    <div class=nav-btn>
         <div id="toggle-icon" onclick="clickFunction()">
             <div class="bar1"></div>
             <div class="bar2"></div>
             <div class="bar3"></div>
         </div>
     </div>
-    <section class="nav section-nav" id="landing-stick">
 
 
+    <nav class="nav">
+        <div class="nav-overlay">
+        </div>
+        <div>
+            <a href="">Home</a>
+            <a href="">About</a>
+            <a href="">Services</a>
+            <a href="">Portfolio</a>
+            <a href="">Contact</a>
+            <a href="">Environment</a>
+        </div>
+
+    </nav>
+    <div class="logo-container">
         <a href="index.html" class=hide-on-mobile>
             <div data-0="transform[outCubic]:scale(3);top:45%" data-1000="transform[outCubic]:scale(1);top:4%"
                 id="nav-logo" class=logo-svg>
@@ -92,18 +107,46 @@
                 </svg>
             </div>
         </a>
-
-    </section>
+    </div>
 
     <div class="progress-bar">
         <div class="progress-bar-bar" data-start="width: 0%" data-end="width: 100%">
 
         </div>
     </div>
-    <section class="section-home-1 landing" data-0p="top:0" data-100p="top:-100vh">
 
-    </section>
 
+
+    <div class="botl" dir="rtl">
+        <div>
+        <div class="landing-img">
+            <img src="img/home-gallery/botl.jpg" alt="">
+        </div>
+        <div class="landing-text">
+            <h3>Bottom of The Lake</h3>
+        </div>
+    </div>
+    <div>
+        <div class="landing-img">
+            <img src="img/home-gallery/botl.jpg" alt="">
+        </div>
+        <div class="landing-text">
+            <h3>Bottom of The Lake</h3>
+        </div>
+    </div>
+    <div>
+        <div class="landing-img">
+            <img src="img/home-gallery/botl.jpg" alt="">
+        </div>
+        <div class="landing-text">
+            <h3>Bottom of The Lake</h3>
+        </div>
+    </div>
+    </div>
+
+    
+
+       
 
         <section class=section-home-2  data-0p="transform:translate(0,100%);" data-100p="transform:translate(0,0%);" data-150p="display: block;" data-250p="transform:translate(0,-100%);">
             <div>
@@ -455,10 +498,10 @@
 
 
     <script>
-        $(".nav-m-btn").click(function () {
+        $(".nav-btn").click(function () {
             $(".nav-m-dropper").toggleClass("nav-open");
             $(".logo-svg").toggleClass("logo-red");
-            $(".nav").toggleClass("pointer-true")
+            $(".nav").toggleClass("open")
         });
 
         function clickFunction() {
@@ -506,9 +549,46 @@
                 smoothScrollingDuration: 200,
             });
         };
+
+        
     </script>
-     
+    
+     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+		
     </div>
 </body>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+      $('.botl').slick({
+        infinite: true,
+        rtl: true,
+        autoplay: true,
+        dots: false,
+        arrows: false,
+        autoplaySpeed: 1,
+        speed: 220000,
+        cssEase: 'linear',
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        pauseOnFocus: false,
+        pauseOnHover: false,
+        respondTo: 'window'
+      });
+    });
+  </script>
+  <script>
+          $('img').hover(function () {
+    $(".landing-text").addClass('hover');
+}, function () {
+    $(".landing-text").removeClass('hover');
+});
+
+$('.landing-text').hover(function () {
+    $(".landing-text").addClass('hover');
+}, function () {
+    $(".landing-text").removeClass('hover');
+});
+  </script>
 
 </html>

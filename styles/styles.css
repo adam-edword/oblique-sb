@@ -29,6 +29,7 @@ body {
   background-color: #F52B50;
   margin: 0;
   font-family: utopia-std-headline;
+  overflow-x: hidden;
 }
 
 p {
@@ -84,10 +85,122 @@ button {
   .nav-m-container {
     display: none;
   }
-  .nav {
+  nav {
     position: absolute;
+    opacity: 0;
     width: 100%;
-    z-index: 100000 !important;
+    height: 100vh;
+    background-image: url(/img/nav.jpg);
+    position: fixed;
+    background-position: center;
+    background-size: cover;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    z-index: 0;
+  }
+  nav .nav-overlay {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(18, 18, 18, 0.5);
+  }
+  .open {
+    z-index: 100000;
+    opacity: 1 !important;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  .nav-btn {
+    z-index: 1000000;
+    position: fixed;
+    top: 50px;
+    width: 30px;
+    height: 30px;
+    left: 50px;
+    cursor: pointer;
+  }
+  .nav-btn #toggle-icon {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  .nav-btn #toggle-icon .bar1 {
+    background-color: white;
+    width: 100%;
+    height: 3px;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
+  }
+  .nav-btn #toggle-icon .bar2 {
+    background-color: white;
+    width: 75%;
+    margin-right: 25%;
+    height: 3px;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
+  }
+  .nav-btn #toggle-icon .bar3 {
+    background-color: white;
+    width: 50%;
+    margin-right: 50%;
+    height: 3px;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
+  }
+  .nav-btn #toggle-icon:hover .bar1 {
+    width: 50%;
+    margin-right: 50%;
+  }
+  .nav-btn #toggle-icon:hover .bar3 {
+    width: 100%;
+    margin-right: 0%;
+  }
+  .nav-btn .rotate-icon {
+    -webkit-transform: translateX(6px);
+            transform: translateX(6px);
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  .nav-btn .rotate-icon .bar1 {
+    width: 100%;
+    height: 3px;
+    -webkit-transition: 0.2s ease;
+    transition: 0.2s ease;
+    -webkit-transform: rotate(45deg) translateY(14px);
+            transform: rotate(45deg) translateY(14px);
+  }
+  .nav-btn .rotate-icon .bar2 {
+    width: 0% !important;
+    margin-right: 100% !important;
+    height: 3px;
+    -webkit-transition: 0.2s ease;
+    transition: 0.2s ease;
+    -webkit-transform: translateX(-20px);
+            transform: translateX(-20px);
+    opacity: 0;
+  }
+  .nav-btn .rotate-icon .bar3 {
+    background-color: white;
+    width: 100% !important;
+    margin-right: 0% !important;
+    height: 3px;
+    -webkit-transition: 0.2s ease;
+    transition: 0.2s ease;
+    -webkit-transform: rotate(-45deg) translateY(-14px);
+            transform: rotate(-45deg) translateY(-14px);
+  }
+  .nav-btn .rotate-icon:hover .bar1 {
+    width: 100% !important;
+    margin-right: 0% !important;
+  }
+  .nav-btn .rotate-icon:hover .bar3 {
+    width: 100%;
+    margin-right: 0%;
   }
   .nav-links-desktop {
     position: fixed !important;
@@ -113,11 +226,15 @@ button {
   .nav-links-desktop div a {
     color: white;
   }
+  .logo-container {
+    z-index: 1000;
+  }
   .logo-svg {
     position: fixed;
     width: 15%;
     top: 45%;
     left: 42.5%;
+    z-index: 1000;
   }
   svg g path {
     -webkit-transition: 0.3s ease-out;
@@ -249,19 +366,53 @@ button {
     height: 3px;
   }
   /* HOME */
-  .landing {
+  .slider-container {
+    position: absolute;
     height: 100vh;
-    width: 100%;
-    z-index: 100;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    width: 200%;
+  }
+  .botl {
+    top: 10vh;
+    width: 250%;
+    height: 400px;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    position: absolute !important;
+    text-align: center;
+  }
+  .botl div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .botl div .landing-img {
+    cursor: pointer;
+    width: 200px;
+  }
+  .botl div .landing-img img {
+    width: 100%;
+  }
+  .botl div .landing-text {
+    cursor: pointer;
+    opacity: 0;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
+    margin-top: -20px;
+    margin-right: -40px;
+    position: absolute !important;
+    color: white;
+  }
+  .botl div .landing-text h3 {
+    font-size: 30px;
+  }
+  .botl div .hover {
+    opacity: 1 !important;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
   }
   section {
     position: fixed !important;
@@ -283,7 +434,6 @@ button {
     text-align: center;
     font-size: 5vh;
     color: white;
-    z-index: 2;
   }
   .section-home-2 {
     background-image: url(/img/ice.jpg);

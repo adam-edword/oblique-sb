@@ -27,6 +27,7 @@ body {
   background-color: $red;
   margin: 0;
   font-family: utopia-std-headline;
+  overflow-x: hidden;
 }
 
 p {
@@ -78,12 +79,117 @@ button {
     display: none;
   }
 
-  .nav {
+  nav {
     position: absolute;
+    opacity: 0;
     width: 100%;
-    z-index: 100000 !important;
-  }
+    height: 100vh;
+    background-image: url(/img/nav.jpg);
+    position: fixed;
+    background-position: center;
+    background-size: cover;
+    transition: 0.3s;
+    z-index: 0;
 
+    & .nav-overlay {
+      width: 100%;
+      height: 100vh;
+      background-color: rgba($color: #121212, $alpha: 0.5);
+    }
+    
+  }
+  .open {
+    z-index: 100000;
+    opacity: 1 !important;
+    transition: 0.3s;
+  }
+  .nav-btn {
+    z-index: 1000000;
+    position: fixed;
+    top: 50px;
+    width: 30px;
+    height: 30px;
+    left: 50px;
+    cursor: pointer;
+    & #toggle-icon {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      transition: 0.3s;
+      & .bar1 {
+        background-color: white;
+        width: 100%;
+        height: 3px;
+        transition: 0.3s ease
+      }
+      & .bar2 {
+        background-color: white;
+        width: 75%;
+        margin-right: 25%;
+        height: 3px;
+        transition: 0.3s ease
+      }
+      & .bar3 {
+        background-color: white;
+        width: 50%;
+        margin-right: 50%;
+        height: 3px;
+        transition: 0.3s ease;
+        
+      }
+      &:hover {
+        .bar1 {
+          width: 50%;
+          margin-right: 50%;
+        }
+        .bar3 {
+          width: 100%;
+          margin-right: 0%;
+        }
+        
+      }
+
+    }
+    & .rotate-icon {
+      transform: translateX(6px);
+      transition: 0.3s;
+      & .bar1 {
+        width: 100%;
+        height: 3px;
+        transition: 0.2s ease;
+        transform: rotate(45deg) translateY(14px);
+      }
+      & .bar2 {
+        width: 0% !important;
+        margin-right: 100% !important;
+        height: 3px;
+        transition: 0.2s ease;
+        transform: translateX(-20px);
+        opacity: 0;
+      }
+      & .bar3 {
+        background-color: white ;
+        width: 100% !important;
+        margin-right: 0% !important;
+        height: 3px;
+        transition: 0.2s ease;
+        transform: rotate(-45deg) translateY(-14px);
+      }
+      &:hover {
+        .bar1 {
+          width: 100% !important; 
+          margin-right: 0% !important;
+        }
+        .bar3 {
+          width: 100%;
+          margin-right: 0%;
+        }
+        
+      }
+    }
+
+  }
 
  
 
@@ -119,13 +225,16 @@ button {
 
 
 
-
+  .logo-container {
+    z-index: 1000;
+  }
 
   .logo-svg {
     position: fixed;
     width: 15%;
     top: 45%;
     left: 42.5%;
+    z-index: 1000;
   }
 
   svg g path {
@@ -249,15 +358,49 @@ button {
 
   /* HOME */
 
+.slider-container {
+  position: absolute;
+  height: 100vh;
+  width: 200%;
+}
 
-  .landing {
-    height: 100vh;
-    width: 100%;
-    z-index: 100;
-    display: flex;
+  .botl {
+    top: 10vh;
+    width: 250%;
+    height: 400px;
+    display: flex !important;
     justify-content: center;
-    align-items: center;
+    position: absolute !important;
+    text-align: center;
+    & div {
+      display: flex;
+      & .landing-img {
+        cursor: pointer;
+        width: 200px;
+        & img {
+          width: 100%;
+        } 
+      }
+      & .landing-text {
+        cursor: pointer;
+        opacity: 0;
+        transition: 0.3s ease;
+        margin-top: -20px;
+        margin-right: -40px;
+        position: absolute !important;
+        color: white;
+        & h3 {
+          font-size: 30px;
+        }
+      }
+      .hover {
+        opacity: 1 !important;
+        transition: 0.3s ease;
+      }
+    }
   }
+
+  
   section {
     position: fixed !important;
   }
@@ -273,7 +416,6 @@ button {
       text-align: center;
       font-size: 5vh;
       color: white;
-      z-index: 2;
     }
     &-2 {
       background-image: url(/img/ice.jpg);

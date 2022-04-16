@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oblique - Home</title>
+    <link rel="stylesheet" href="https://use.typekit.net/rsi3heu.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" href="img/favicon.jpg">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+</head>
+
+<body>
+
+ 
+        <div class="botl" dir="rtl">
+            <div>
+            <div class="landing-img">
+                <img src="img/home-gallery/botl.jpg" alt="">
+            </div>
+            <div class="landing-text">
+                <h3>Bottom of The Lake</h3>
+            </div>
+        </div>
+        <div>
+            <div class="landing-img">
+                <img src="img/home-gallery/botl.jpg" alt="">
+            </div>
+            <div class="landing-text">
+                <h3>Bottom of The Lake</h3>
+            </div>
+        </div>
+        <div>
+            <div class="landing-img">
+                <img src="img/home-gallery/botl.jpg" alt="">
+            </div>
+            <div class="landing-text">
+                <h3>Bottom of The Lake</h3>
+            </div>
+        </div>
+        </div>
+
+
+
+     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+		
+</body>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+      $('.botl').slick({
+        infinite: true,
+        rtl: true,
+        autoplay: true,
+        dots: false,
+        arrows: false,
+        autoplaySpeed: 1,
+        speed: 220000,
+        cssEase: 'linear',
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        pauseOnFocus: false,
+        pauseOnHover: false,
+        respondTo: 'window'
+      });
+    });
+  </script>
+  <script>
+          $('img').hover(function () {
+    $(".landing-text").addClass('hover');
+}, function () {
+    $(".landing-text").removeClass('hover');
+});
+
+$('.landing-text').hover(function () {
+    $(".landing-text").addClass('hover');
+}, function () {
+    $(".landing-text").removeClass('hover');
+});
+  </script>
+
+</html>
